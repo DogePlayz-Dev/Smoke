@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Smoke</title>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!-- <link rel="icon" type="image/png" href="https://ssl.gstatic.com/classroom/favicon.png"> -->
+    </head>
+    <body>
+
+    </body>
+    <script>
+        const w = window.open('about:blank')
+        if(!w){
+            swal({
+                title: "Popups Required",
+                text: "Please enable Popups to use Smoke\nPress CTRL+O to open anyway",
+                icon: 'error',
+                button: null,
+                closeOnEsc: false,
+                closeOnClickOutside: false
+            })
+            document.addEventListener('keypress', (e) => {
+                if(e.ctrlKey && e.keyCode == 79){
+                    w = window.open('about:blank')
+                    let icon = w.document.createElement('link')
+                    icon.rel = 'icon'
+                    icon.type = 'image/png'
+                    icon.href = 'https://ssl.gstatic.com/classroom/favicon.png'
+                    w.document.head.appendChild(icon)
+                    let title = w.document.createElement('title')
+                    title.innerHTML = 'Classes'
+                    w.document.head.appendChild(title)
+                    return false;
+                }
+            })
+        }else{
+            let icon = w.document.createElement('link')
+            icon.rel = 'icon'
+            icon.type = 'image/png'
+            icon.href = 'https://ssl.gstatic.com/classroom/favicon.png'
+            w.document.head.appendChild(icon)
+            let title = w.document.createElement('title')
+            title.innerHTML = 'Classes'
+            w.document.head.appendChild(title)
+        }
+    </script>
+</html>

@@ -3,7 +3,7 @@
 ## Running on Local Machine
 ```
 $ git clone https://github.com/DogePlayz-Dev/Smoke/
-(go inside the smoke directory, idk the directory name)
+$ cd Smoke
 $ npm install
 $ node .
 ```
